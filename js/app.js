@@ -6,11 +6,10 @@ new Swiper('.swiper', {
       direction: 'vertical',
       speed: 800,
     //   slidesPerView: 1, 
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true,
-        },
+    hashNavigation: {
+        watchState: true,
+        replaceState: true,
+      },
 });
 
 new Swiper('.sostav__slider', {
@@ -128,7 +127,18 @@ slides.forEach(element => {
 });
 
 //форма
+let formBtn = document.querySelectorAll('.formBtn');
 
-document.querySelector('.formBtn').addEventListener('click', function(){
-    document.querySelector('.forma').classList.add('active');
-})
+formBtn.forEach(element => {
+    element.addEventListener('click', function(){
+        document.querySelector('.forma').classList.add('active');
+    })
+});
+
+let closeForm = document.querySelectorAll('.closeForm');
+
+closeForm.forEach(element => {
+    element.addEventListener('click', function(){
+        document.querySelector('.forma').classList.remove('active');
+    })
+});

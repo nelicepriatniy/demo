@@ -33,6 +33,7 @@ $CharpenL: 'Charpen';
 p, a, h1, h2, h3, h4, span, ul, li {
     margin: 0;
     padding: 0; 
+    text-decoration: none;
 }
 .container {
     width: 1180px;
@@ -102,6 +103,9 @@ header {
             list-style: none;
             & li {
                 margin-right: 2em;
+                &:hover{
+                    cursor: pointer;
+                }
                 & p {
                     color: #8E8D8B;
                     font-size: 24px;
@@ -839,6 +843,14 @@ header {
                 font-family: $giloryS;
                 &:hover {
                     cursor: pointer;
+                }
+                & a {color: #8E8D8B;
+                    margin: 0 10px;
+                    font-size: 24px;
+                    line-height: 157%;
+                    letter-spacing: -0.03em;
+                    font-family: $giloryS;
+                    text-decoration: none;
                 }
             }
         }

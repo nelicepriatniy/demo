@@ -31,6 +31,7 @@
 p, a, h1, h2, h3, h4, span, ul, li {
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .container {
@@ -137,6 +138,10 @@ header .container ul {
 
 header .container ul li {
   margin-right: 2em;
+}
+
+header .container ul li:hover {
+  cursor: pointer;
 }
 
 header .container ul li p {
@@ -1097,6 +1102,16 @@ header .container .contacts p span:last-child {
 
 .forma footer ul li:hover {
   cursor: pointer;
+}
+
+.forma footer ul li a {
+  color: #8E8D8B;
+  margin: 0 10px;
+  font-size: 24px;
+  line-height: 157%;
+  letter-spacing: -0.03em;
+  font-family: "GilroyS";
+  text-decoration: none;
 }
 
 .forma footer .contacts p {
