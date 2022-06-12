@@ -35,6 +35,11 @@ p, a, h1, h2, h3, h4, span, ul, li {
     padding: 0; 
     text-decoration: none;
 }
+
+.mobile {
+    display: none;
+}
+
 .container {
     width: 1180px;
 }
@@ -91,6 +96,9 @@ header {
     align-items: center;
     z-index: 10;
     border-bottom: 4px solid rgba(142, 141, 139, 0.6);
+    & .header__mobile {
+        display: flex;
+    }
     & .logo__img {
         height: 102px;
     }
@@ -98,6 +106,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
         & ul {
             display: flex;
             list-style: none;
@@ -130,7 +139,11 @@ header {
                 }
             }
         }
-    }
+        & .shop {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
 }
 
 .swiper {
@@ -145,76 +158,55 @@ header {
                 display: flex;
                 align-items: center;
                 background: linear-gradient(121.99deg, #F7F7F7 10.17%, #B3B3B3 92.29%);
+                & .container {
+                    transform: translateY(150vh);
+                    transition: all .8s ease;
+                }
                 & .top__text {
                     & h1 {
                         font-family: $Coldiac;
                         font-size: 84px;
                         margin-bottom: 31px;
-                        opacity: 0;
-                        transform: translateY(150vh);
                         transition: .8s ease;
                     }
                     & p {
                         font-family: $giloryL;
                         font-size: 38px;
                         width: 590px;
-                        opacity: 0;
-                        transform: translateY(150vh);
                         transition: .8s ease;
                         &:last-child {
                             margin-top: 31px;
                             font-family: $giloryM; 
                         }
                     }
+                    & .moretop {
+                        background: #150F10;
+                        border: 3px solid #EFE199;
+                        border-radius: 2px;
+                        color: #F7E297;
+                        padding: 11px 28px;
+                        font-size: 32px;
+                        line-height: 102%;
+                        letter-spacing: 0.05em;
+                        font-family: $Coldiac;
+                    }
                 }
                 & .topBg {
                     position: absolute;
                     right: 161px;
                     width: 683px;
-                    scale: 20;
-                    transform:translateY(150vh);
                     transition: all .9s ease;
+                    z-index: -2;
                     &.krem {
                         width: auto;
-                        height: 70%;
+                        height: 534px;
+                        z-index: -1;
                     }
                 }
             }
             &.swiper-slide-active {
-                &.top {
-                    display: flex;
-                    align-items: center;
-                    background: linear-gradient(121.99deg, #F7F7F7 10.17%, #B3B3B3 92.29%);
-                    & .top__text {
-                        & h1 {
-                            font-family: $Coldiac;
-                            font-size: 84px;
-                            margin-bottom: 31px;
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                        & p {
-                            font-family: $giloryL;
-                            font-size: 38px;
-                            width: 590px;
-                            opacity: 1;
-                            transform: translateY(0);
-                            &:last-child {
-                                margin-top: 31px;
-                                font-family: $giloryM; 
-                            }
-                        }
-                    }
-                    & .topBg {
-                        position: absolute;
-                        right: 161px;
-                        width: 683px;
-                        transform: scale(1) translateY(0);
-                        &.krem {
-                            width: auto;
-                            height: 70%;
-                        }
-                    }
+                & .container {
+                    transform: translateY(0);
                 }
             }
             
@@ -396,7 +388,7 @@ header {
                 font-size: 80px;
             }
             & p {
-                font-family: $giloryM;
+                font-family: $giloryL;
                 font-size: 32px;
                 line-height: 39px;
                 margin-bottom: 30px;
@@ -461,11 +453,6 @@ header {
                 transform: translateY(0);
             }
                 & img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: -1;
                     transform: translateY(0);
                 }
         }
@@ -474,11 +461,6 @@ header {
                 transform: translateY(150vh);
             }
                 & img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: -1;
                     transform: translateY(100vh);
                 }
         }
@@ -869,3 +851,386 @@ header {
     }
 }
 
+
+@media (max-width: 1024px) {
+    .mobile {
+        display: block;
+    }
+    .container {
+        width: 95%;
+    }
+    header {
+        & .logo__img {
+            height: 52px;
+        }
+        & .container {
+            & ul {
+                flex-direction: column;
+            }
+        }
+        & .header__mobile {
+            transform: translateX(100vh);
+            padding: 10px 0;
+            align-items: center;
+            text-align: center;
+            position: fixed;
+            flex-direction: column;
+            top: 0;
+            width: 80vw;
+            height: 100vh;
+            right: -20px;
+            background: #525252;
+            transition: all .8s ease;
+            &.active{
+                transform: translateX(0);
+            }
+            & .shop {
+                margin: 0;
+                order: 2;
+                margin-bottom: 10px;
+            }
+            & .contacts {
+                order: 3;
+                color: white;
+                & p {
+                    & span {
+                        color: white;
+                    }
+                }
+
+            }
+            & ul {
+                & li {
+                    margin: 0;
+                    & p {
+                        font-size: 16px;
+                        line-height: 157%;
+                        color: white;
+                        letter-spacing: -0.03em;
+                    }
+                }
+            }
+        }
+        & .mobile__openbtn {
+            height: 14px;
+        }
+        & .mobile__open {
+            width: 17px;
+            height: 2px;
+            background: #3B3B3B;
+            position: relative;
+            transition: all .8s ease;
+            &::after {
+                width: 17px;
+                height: 2px;
+                background: #3B3B3B;
+                content: '';
+                position: absolute;
+                top: 6px;
+                left: 0;;
+                transition: all .8s ease;
+            }
+            &::before {
+                width: 17px;
+                height: 2px;
+                background: #3B3B3B;
+                content: '';
+                position: absolute;
+                top: 12px;
+                left: 0;;
+                transition: all .8s ease;
+            }
+            &.active {
+                background: #3b3b3b00;
+                &::after {
+                    width: 17px;
+                    height: 2px;
+                    background: #ffffff;
+                    content: '';
+                    position: absolute;
+                    transform: rotate(45deg);
+                    top: 0;
+                    left: 0;;
+                }
+                &::before {
+                    width: 17px;
+                    height: 2px;
+                    background: #ffffff;
+                    content: '';
+                    position: absolute;
+                    transform: rotate(-45deg);
+                    top: 0;
+                    left: 0;;
+                }
+            }
+        }
+    }
+    & .swiper {
+        & .swiper-wrapper {
+            & .swiper-slide{
+                &.top {
+                    align-items: flex-start;
+                    & .top__text {
+                        margin-top: 104px;
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        & p {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 108%;
+                        }
+                        & h1 {
+                            text-align: center;
+                            font-size: 36px;
+                            line-height: 104.5%;
+                            margin-bottom: 6px;
+                        }
+                        & .moretop {
+                            margin-top: 55vh;
+                            font-weight: 400;
+                            font-size: 15px;
+                            line-height: 102%;
+                            padding: 10px 32px;
+                            letter-spacing: 0.05em;
+                            width: 161px;
+                        }
+                    }
+                    & .topBg {
+                        width: 80vw;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        filter: blur(5px);
+                        &.krem {
+                            filter: blur(0px);
+                            width: 80vw;
+                            height: auto;
+                            top: 60vh;
+                            right: 10vw;
+                        }
+                    }
+                }
+                & .slider {
+                    & .second__bg {
+                        width: auto;
+                        height: 100vh;
+                    }
+                    & .swiper-slide {
+                        &.info{
+                            & .text {
+                                & h1 {
+                                    font-size: 36px;
+                                    line-height: 131%;
+                                    letter-spacing: 0.05em;
+                                }
+                            }
+                            & .tovar {
+                                padding: 9px 15px;
+                                & p {
+                                    font-size: 17px;
+                                    line-height: 86%;
+                                    text-align: center;
+                                    letter-spacing: 0.05em;
+                                }
+                                & .tovar__card {
+                                    flex-direction: column;
+                                    & .tovar__img {
+                                        & img {
+                                            height: 141px;
+                                        }
+                                    }
+                                    & .tovar__info {
+                                        text-align: center;
+                                        & p {
+                                            font-size: 16px;
+                                            line-height: 102%;
+                                            width: 100%;
+                                            text-align: center;
+                                            letter-spacing: 0.05em;
+                                            margin-bottom: 7px;
+                                            &.in {
+                                                font-size: 13px;
+                                                line-height: 127.5%;
+                                                width: 100%;
+                                                text-align: center;
+                                                letter-spacing: 0.01em;}
+                                        }
+                                        & .buttons {
+                                            & button {
+                                                font-size: 14px;
+                                                line-height: 108%;
+                                                text-align: center;
+                                                letter-spacing: 0.05em;
+                                            }
+                                        }
+                                        & button {
+                                            font-size: 15px;
+                                            line-height: 108%;
+                                            padding: 12px 14px;
+                                            margin-top: 10px;
+                                            text-align: center;
+                                            letter-spacing: 0.01em;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        & .third {
+            & img {
+                height: 100%;
+                width: auto;
+                left: -130%;
+            }
+            & .container {
+                & h1 {
+                    font-size: 36px;
+                    line-height: 30px;
+                    text-align: center;
+                    letter-spacing: 0.05em;
+                    width: 100%;
+                }
+                & p {
+                    font-size: 16px;
+                    line-height: 19px;
+                    text-align: center;
+                    letter-spacing: 0.05em;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    &.notmob {
+                        display: none;
+                    }
+                    &.gold {
+                        font-size: 15px;
+                        line-height: 18px;
+                        text-align: center;
+                        margin-top: 0;
+                        letter-spacing: 0.05em;
+                    }
+                }
+                & button {
+                    font-size: 17px;
+                    line-height: 108%;
+                    text-align: center;
+                    letter-spacing: 0.01em;
+                    margin-bottom: 10px;
+                }
+                & .sales {
+                    flex-direction: column;
+                    & .sales__item {
+                        width: 100%;
+                        border: none;
+                        border-bottom: 2px solid #E7CC62;
+                        & p {
+                            font-size: 16px;
+                            line-height: 19px;
+                            letter-spacing: 0.05em;
+                            &.gold {
+                                margin-top: 0;
+                                font-size: 40px;
+                                line-height: 49px;
+                                letter-spacing: 0.05em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tovar-podrobnee {
+        height: 70%;
+        padding: 9px 2px;
+        overflow-x: hidden;
+        & .text__wraper {
+            padding: 9px 5px;
+            & h1 {
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.05em;
+            }
+            & p {
+                font-size: 13px;
+                line-height: 16px;
+                text-align: center;
+                letter-spacing: 0.05em;
+            }
+        }
+        & .text__wraper1 {
+            & h1 {
+                font-size: 15px;
+                line-height: 18px;
+                text-align: center;
+                letter-spacing: 0.05em;
+            }
+        }
+        & .plus {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 25px;
+            & ul {
+                width: 100%;
+                & li {
+                    & p {
+                        font-size: 13px;
+                        line-height: 16px;
+                        letter-spacing: 0.05em;
+
+                    }
+                    &::before {
+                        top: 0;
+                        width: 10px;
+                        height: 10px;
+                        border: 2px solid #ECC539;
+                    }
+                }
+            }
+            & .rlist {
+                margin-bottom: 10px;
+                width: 100%;
+                & p {
+                    font-size: 13px;
+                    line-height: 16px;
+                    letter-spacing: 0.05em;
+                }
+            }
+        }
+    }
+    & .sostav {
+        padding: 0;
+        & h1 {
+            margin-left: 10px;
+            font-size: 20px;
+            line-height: 24px;
+            letter-spacing: 0.05em;
+        }
+        & .sostav__wraper {
+            display: flex;
+            flex-direction: column;
+        }
+        & .sostav__slider {
+            height: auto;
+            width: 100%;
+            & .swiper-slide {
+                text-align: center;
+                padding: 2px 4px;
+                font-size: 10px;
+                line-height: 24px;
+                letter-spacing: 0.05em;
+            }
+        }
+        & .sostav__text {
+            padding: 9px ;
+            width: 100%;
+            & p {
+                font-size: 13px;
+                line-height: 16px;
+                text-align: center;
+            }
+        }
+    }
+}

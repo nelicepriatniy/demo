@@ -13,12 +13,23 @@ new Swiper('.swiper', {
 });
 
 new Swiper('.sostav__slider', {
-    mousewheel: {
-      },
-      direction: 'vertical',
-    slidesPerView: 8, 
-    spaceBetween: 10,
-    simulateTouch: false,
+    
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            direction: 'horizontal',
+            slidesPerView: 3, 
+            autoHeight: true,
+        },
+        1024: {
+            mousewheel: {
+            },
+            direction: 'vertical',
+          slidesPerView: 8, 
+          spaceBetween: 10,
+          simulateTouch: false,
+            },
+    }
 });
 
 new Swiper('.slider', {
@@ -140,5 +151,21 @@ let closeForm = document.querySelectorAll('.closeForm');
 closeForm.forEach(element => {
     element.addEventListener('click', function(){
         document.querySelector('.forma').classList.remove('active');
+    })
+});
+
+//мобильный хедер 
+
+document.querySelector('.mobile__openbtn').addEventListener('click', function(){
+    document.querySelector('.header__mobile').classList.toggle('active');
+    document.querySelector('.mobile__open').classList.toggle('active');
+})
+
+let closm = document.querySelectorAll('.mobcl');
+
+closm.forEach(element => {
+    element.addEventListener('click', function(){
+        document.querySelector('.header__mobile').classList.remove('active');
+        document.querySelector('.mobile__open').classList.remove('active');
     })
 });
