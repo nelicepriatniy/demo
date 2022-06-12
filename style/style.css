@@ -1235,6 +1235,7 @@ header .shop {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+ height:100vh;
   }
   .swiper .swiper-wrapper .swiper-slide.top .top__text {
     margin-top: 104px;
