@@ -201,7 +201,7 @@ header .shop {
 }
 
 .swiper .swiper-wrapper .swiper-slide {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -582,7 +582,8 @@ header .shop {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
   z-index: -1;
   -webkit-transform: translateY(-100vh);
           transform: translateY(-100vh);
@@ -1232,10 +1233,10 @@ header .shop {
     left: 0;
   }
   .swiper .swiper-wrapper .swiper-slide.top {
+    height: 100vh;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
- height:100vh;
   }
   .swiper .swiper-wrapper .swiper-slide.top .top__text {
     margin-top: 104px;
@@ -1501,6 +1502,53 @@ header .shop {
     font-size: 13px;
     line-height: 16px;
     text-align: center;
+  }
+  .forma .container h1 {
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 42px;
+    letter-spacing: 0.1em;
+    width: 221px;
+  }
+  .forma .formBg {
+    width: 120px;
+    height: auto;
+    top: 0;
+  }
+  .forma form {
+    width: 100%;
+    height: auto;
+  }
+  .forma form label {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.245em;
+    margin: 0;
+    margin-top: 11px;
+  }
+  .forma form label:first-child {
+    margin-top: 0;
+  }
+  .forma form input, .forma form textarea {
+    width: 100%;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 9px;
+    letter-spacing: 0.245em;
+  }
+  .forma form button {
+    font-size: 17px;
+    line-height: 108%;
+    padding: 11px 6px;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+  .forma footer img {
+    display: none;
+  }
+  .forma footer ul li:nth-child(n+2) {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

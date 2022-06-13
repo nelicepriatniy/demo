@@ -150,7 +150,7 @@ header {
     height: 100vh;
     & .swiper-wrapper {
         & .swiper-slide {
-            width: 100%;
+            width: 100vw;
             height: 100vh;
             overflow: hidden;
             &.top {
@@ -443,7 +443,8 @@ header {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
             z-index: -1;
             transform: translateY(-100vh);
             transition: .8s ease all;
@@ -969,6 +970,7 @@ header {
         & .swiper-wrapper {
             & .swiper-slide{
                 &.top {
+                    height: 100vh;
                     align-items: flex-start;
                     & .top__text {
                         margin-top: 104px;
@@ -1230,6 +1232,63 @@ header {
                 font-size: 13px;
                 line-height: 16px;
                 text-align: center;
+            }
+        }
+    }
+    & .forma {
+        & .container {
+            & h1 {
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+                margin-bottom: 42px;
+                letter-spacing: 0.1em;
+                width: 221px;
+            }
+        }
+        & .formBg {
+            width: 120px ;
+            height: auto;
+            top: 0;
+        }
+        & form {
+            width: 100%;
+            height: auto;
+            & label {
+                font-size: 16px;
+                line-height: 19px;
+                letter-spacing: 0.245em;
+                margin: 0;
+                margin-top: 11px;
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            & input, textarea {
+                width: 100%;
+                font-size: 13px;
+                line-height: 16px;
+                padding: 9px;
+                letter-spacing: 0.245em;
+            }
+            & button {
+                font-size: 17px;
+                line-height: 108%;
+                padding: 11px 6px;
+                text-align: center;
+                letter-spacing: 0.01em;
+            }
+        }
+        & footer {
+            & img {
+                display: none;
+            }
+            & ul {
+                & li {
+                    &:nth-child(n+2){
+                        display: none;
+                    }
+                }
             }
         }
     }
