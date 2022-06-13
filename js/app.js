@@ -13,6 +13,8 @@ new Swiper('.swiper', {
 });
 
 new Swiper('.sostav__slider', {
+    mousewheel: {
+    },
     
     breakpoints: {
         // when window width is >= 320px
@@ -22,8 +24,6 @@ new Swiper('.sostav__slider', {
             autoHeight: true,
         },
         1024: {
-            mousewheel: {
-            },
             direction: 'vertical',
           slidesPerView: 8, 
           spaceBetween: 10,
@@ -54,13 +54,14 @@ new Swiper('.swiper-form', {
     autoHeight: true,
 })
 
+//прелоадер
 document.body.onload = function (){
     setTimeout(function(){
         let preloader = document.querySelector('.preloader');
         if ( !preloader.classList.contains('done')) {
             preloader.classList.add('done');
         }
-    }, 1000)
+    }, 2000)
     
 }
 
