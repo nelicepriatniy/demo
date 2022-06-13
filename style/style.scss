@@ -431,6 +431,7 @@ header {
                         color: #E7CC62;
                         font-size: 64px;
                         width: 100%;
+                        font-family: $giloryM;
                     }
                     &:last-child {
                         border-right: 0;
@@ -857,6 +858,9 @@ header {
     .mobile {
         display: block;
     }
+    .notmob {
+        display: none;
+    }
     .container {
         width: 95%;
     }
@@ -990,7 +994,7 @@ header {
                             margin-bottom: 6px;
                         }
                         & .moretop {
-                            margin-top: 55vh;
+                            margin-top: 50vh;
                             font-weight: 400;
                             font-size: 15px;
                             line-height: 102%;
@@ -1020,6 +1024,11 @@ header {
                         height: 100vh;
                     }
                     & .swiper-slide {
+                        & .container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
                         &.info{
                             & .text {
                                 & h1 {
@@ -1030,6 +1039,8 @@ header {
                             }
                             & .tovar {
                                 padding: 9px 15px;
+                                overflow: hidden;
+                                width: 280px;
                                 & p {
                                     font-size: 17px;
                                     line-height: 86%;
@@ -1042,13 +1053,26 @@ header {
                                         & img {
                                             height: 141px;
                                         }
+                                        & .line {
+                                            position: absolute;
+                                            width: 140%;
+                                            height: 2px;
+                                            top: 80px;
+                                            background-color: #ECC539;
+                                            left: -20%;
+                                            transform: rotate(-24.51deg);
+                                        }
                                     }
                                     & .tovar__info {
+                                        margin-top: -30px;
                                         text-align: center;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
                                         & p {
+                                            width: 141px;
                                             font-size: 16px;
                                             line-height: 102%;
-                                            width: 100%;
                                             text-align: center;
                                             letter-spacing: 0.05em;
                                             margin-bottom: 7px;
@@ -1128,7 +1152,12 @@ header {
                         width: 100%;
                         border: none;
                         border-bottom: 2px solid #E7CC62;
+                        &:last-child {
+                            border-bottom: none;
+
+                        }
                         & p {
+                            margin-top: 0;
                             font-size: 16px;
                             line-height: 19px;
                             letter-spacing: 0.05em;
