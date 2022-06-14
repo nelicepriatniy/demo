@@ -218,7 +218,8 @@ header {
                 transition: all .8s ease;
                 height: auto;
                 & .second__bg {
-                    width: 100%;
+                    min-width: 100%;
+                    min-height: 100%;
                     position: absolute;
                     z-index: -1;
                     transition: all .8s ease;

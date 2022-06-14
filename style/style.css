@@ -290,7 +290,8 @@ header .shop {
 }
 
 .swiper .swiper-wrapper .swiper-slide .slider .second__bg {
-  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
   position: absolute;
   z-index: -1;
   -webkit-transition: all .8s ease;
