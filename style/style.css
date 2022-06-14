@@ -217,7 +217,7 @@ header .shop {
   background: linear-gradient(121.99deg, #F7F7F7 10.17%, #B3B3B3 92.29%);
 }
 
-.swiper .swiper-wrapper .swiper-slide.top .container {
+.swiper .swiper-wrapper .swiper-slide.top .sad {
   -webkit-transform: translateY(150vh);
           transform: translateY(150vh);
   -webkit-transition: all .8s ease;
@@ -272,7 +272,7 @@ header .shop {
   z-index: -1;
 }
 
-.swiper .swiper-wrapper .swiper-slide.swiper-slide-active .container {
+.swiper .swiper-wrapper .swiper-slide.swiper-slide-active .sad {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
@@ -939,21 +939,17 @@ header .shop {
 }
 
 .forma {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  visibility: hidden;
   opacity: 1;
   z-index: 20;
   overflow-y: scroll;
-  background: white;
-  -webkit-transform: translateY(100vh);
-          transform: translateY(100vh);
   color: black;
   -webkit-transition: all .6s ease;
   transition: all .6s ease;
+  background: #F7F7F7;
 }
 
 .forma::-webkit-scrollbar {
@@ -981,7 +977,7 @@ header .shop {
   line-height: 44px;
   letter-spacing: 0.245em;
   font-family: "GilroyS";
-  margin-bottom: 49px;
+  margin-bottom: 17px;
 }
 
 .forma .container {
@@ -998,7 +994,7 @@ header .shop {
 }
 
 .forma form {
-  margin-bottom: 51px;
+  margin-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1007,44 +1003,62 @@ header .shop {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
+  z-index: 3;
 }
 
 .forma form label {
   font-size: 27px;
-  line-height: 44px;
+  line-height: 32px;
   letter-spacing: 0.245em;
   font-family: "GilroyR";
-  margin: 15px 0;
+  margin: 14px 0 0 0;
+  width: 100%;
+}
+
+.forma form label:first-child {
+  margin-top: 0;
 }
 
 .forma form input, .forma form textarea {
-  border: 4px solid #8E8D8B;
   border-radius: 2px;
   background: none;
   font-size: 27px;
   line-height: 33px;
-  padding: 25px 22px;
+  padding: 11px 22px 9px 22px;
   letter-spacing: 0.245em;
+  width: 100%;
+  border: 2px solid #8E8D8B;
+  border-radius: 2px;
 }
 
 .forma form textarea {
   min-height: 105px;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
 }
 
 .forma form button {
   border: 3px solid #000000;
   border-radius: 5px;
   background: none;
-  padding: 23px 46px;
-  width: 50%;
-  margin-left: 50%;
+  padding: 15px 12px;
+  font-size: 29px;
+  line-height: 108%;
 }
 
 .forma .formBg {
   position: absolute;
-  z-index: -1;
-  right: 0;
+  z-index: 2;
+  right: 105px;
+  width: 502px;
+}
+
+.forma footer {
+  position: relative;
+  z-index: 4;
 }
 
 .forma footer .container {
@@ -1064,7 +1078,7 @@ header .shop {
 }
 
 .forma footer img {
-  height: 259px;
+  height: 102.85px;
 }
 
 .forma footer ul {
@@ -1309,6 +1323,15 @@ header .shop {
         -ms-flex-align: center;
             align-items: center;
   }
+  .swiper .swiper-wrapper .swiper-slide .slider .swiper-slide.info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh !important;
+  }
   .swiper .swiper-wrapper .swiper-slide .slider .swiper-slide.info .text h1 {
     font-size: 36px;
     line-height: 131%;
@@ -1386,6 +1409,14 @@ header .shop {
     margin-top: 10px;
     text-align: center;
     letter-spacing: 0.01em;
+  }
+  .swiper .third {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .swiper .third img {
     height: 100%;
@@ -1531,6 +1562,9 @@ header .shop {
     width: 100%;
   }
   .sostav .sostav__slider .swiper-slide {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
     padding: 2px 4px;
     font-size: 10px;
@@ -1545,6 +1579,9 @@ header .shop {
     font-size: 13px;
     line-height: 16px;
     text-align: center;
+  }
+  .forma {
+    overflow: hidden;
   }
   .forma .container h1 {
     font-size: 20px;
@@ -1586,6 +1623,9 @@ header .shop {
     padding: 11px 6px;
     text-align: center;
     letter-spacing: 0.01em;
+  }
+  .forma footer {
+    display: none;
   }
   .forma footer img {
     display: none;

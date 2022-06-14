@@ -20,7 +20,7 @@ new Swiper('.sostav__slider', {
         // when window width is >= 320px
         320: {
             direction: 'horizontal',
-            slidesPerView: 3, 
+            slidesPerView: 2.5, 
             autoHeight: true,
         },
         1024: {
@@ -104,26 +104,31 @@ document.querySelector('.sostavbtn').addEventListener('click', function(){
     document.querySelector('.popap__close').classList.add('active')
 })
 
+if(window.innerWidth > 1024) {
+    let slides = document.querySelectorAll('.slide__sostav');
+    document.addEventListener('wheel', function(){
+        for (i = 0; i < slides.length; ++i) {
+            if(slides[i].classList.contains('swiper-slide-active')){
+                slides[i+7].classList.add('sostavPrev');
+            } else if(!slides[i].classList.contains('swiper-slide-active')){
+                slides[i+7].classList.remove('sostavPrev');
+            }
+        }
+    })
+    document.addEventListener('mousemove', function(){
+        for (i = 0; i < slides.length; ++i) {
+            if(slides[i].classList.contains('swiper-slide-active')){
+                slides[i+7].classList.add('sostavPrev');
+            } else if(!slides[i].classList.contains('swiper-slide-active')){
+                slides[i+7].classList.remove('sostavPrev');
+            }
+        }
+    })
+}
+
 let slides = document.querySelectorAll('.slide__sostav');
 
-document.addEventListener('wheel', function(){
-    for (i = 0; i < slides.length; ++i) {
-        if(slides[i].classList.contains('swiper-slide-active')){
-            slides[i+7].classList.add('sostavPrev');
-        } else if(!slides[i].classList.contains('swiper-slide-active')){
-            slides[i+7].classList.remove('sostavPrev');
-        }
-    }
-})
-document.addEventListener('mousemove', function(){
-    for (i = 0; i < slides.length; ++i) {
-        if(slides[i].classList.contains('swiper-slide-active')){
-            slides[i+7].classList.add('sostavPrev');
-        } else if(!slides[i].classList.contains('swiper-slide-active')){
-            slides[i+7].classList.remove('sostavPrev');
-        }
-    }
-})
+
 
 slides.forEach(element => {
     element.addEventListener('click', function(){
