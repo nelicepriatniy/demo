@@ -102,6 +102,36 @@ p, a, h1, h2, h3, h4, span, ul, li {
   }
 }
 
+.fix__btn {
+  position: fixed;
+  left: 5%;
+  z-index: 10;
+}
+
+.fix__btn .logo__img {
+  height: 102px;
+  opacity: .8;
+}
+
+.fix__btn .container {
+  padding: 0;
+  position: relative;
+}
+
+.fix__btn .svg {
+  height: 102px;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.fix__btn .svg:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 header {
   position: absolute;
   top: 0;
@@ -123,8 +153,32 @@ header .header__mobile {
   display: flex;
 }
 
+header .logo {
+  opacity: 0;
+}
+
 header .logo__img {
   height: 102px;
+  opacity: .8;
+}
+
+header .container {
+  padding: 0;
+  position: relative;
+}
+
+header svg {
+  height: 102px;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+header svg:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 header .container {
@@ -147,6 +201,12 @@ header ul {
 }
 
 header ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-right: 2em;
 }
 
@@ -156,7 +216,7 @@ header ul li:hover {
 
 header ul li p {
   color: #8E8D8B;
-  font-size: 24px;
+  font-size: 21px;
   font-family: "GilroyS";
 }
 
@@ -217,6 +277,30 @@ header .shop {
   background: linear-gradient(121.99deg, #F7F7F7 10.17%, #B3B3B3 92.29%);
 }
 
+.swiper .swiper-wrapper .swiper-slide.top .links {
+  bottom: 50px;
+  right: 50px;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.swiper .swiper-wrapper .swiper-slide.top .links a {
+  margin-bottom: 45px;
+}
+
+.swiper .swiper-wrapper .swiper-slide.top .links a:last-child {
+  margin-bottom: 0;
+}
+
 .swiper .swiper-wrapper .swiper-slide.top .sad {
   -webkit-transform: translateY(150vh);
           transform: translateY(150vh);
@@ -254,7 +338,7 @@ header .shop {
   font-size: 32px;
   line-height: 102%;
   letter-spacing: 0.05em;
-  font-family: "Coldiac";
+  font-family: "giloryl";
 }
 
 .swiper .swiper-wrapper .swiper-slide.top .topBg {
@@ -272,9 +356,25 @@ header .shop {
   z-index: -1;
 }
 
+.swiper .swiper-wrapper .swiper-slide.top .topBgDesktop {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+  -webkit-transform: translateY(100vh) scale(1.2);
+          transform: translateY(100vh) scale(1.2);
+}
+
 .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .sad {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.swiper .swiper-wrapper .swiper-slide.swiper-slide-active .topBgDesktop {
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 
 .swiper .swiper-wrapper .swiper-slide .slider {
@@ -296,8 +396,8 @@ header .shop {
   z-index: -1;
   -webkit-transition: all .8s ease;
   transition: all .8s ease;
-  -webkit-transform: translateY(100vh);
-          transform: translateY(100vh);
+  -webkit-transform: translateY(100vh) scale(1.1);
+          transform: translateY(100vh) scale(1.1);
   top: 0;
 }
 
@@ -345,7 +445,6 @@ header .shop {
           align-items: center;
   width: 100%;
   border-radius: 15px;
-  border: 3px solid #ecc539;
   padding: 13px 33px;
 }
 
@@ -463,8 +562,8 @@ header .shop {
 }
 
 .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .slider .second__bg {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
   top: 0;
 }
 
@@ -474,8 +573,8 @@ header .shop {
 }
 
 .swiper .swiper-wrapper .swiper-slide.swiper-slide-prev .slider .second__bg {
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
+  -webkit-transform: translateY(-100vh) scale(1.2);
+          transform: translateY(-100vh) scale(1.2);
   top: 0;
 }
 
@@ -531,7 +630,7 @@ header .shop {
 }
 
 .swiper .third .container button {
-  background: linear-gradient(97.42deg, #858585 1.07%, #D3D3D3 59.25%, #747474 105.98%);
+  background: linear-gradient(-45deg, #858585 1.07%, #D3D3D3 59.25%, #747474 105.98%);
   border-radius: 5px;
   font-family: "GilroyM";
   font-size: 29px;
@@ -590,8 +689,8 @@ header .shop {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
-  -webkit-transform: translateY(-100vh);
-          transform: translateY(-100vh);
+  -webkit-transform: translateY(-100vh) scale(1.2);
+          transform: translateY(-100vh) scale(1.2);
   -webkit-transition: .8s ease all;
   transition: .8s ease all;
 }
@@ -602,8 +701,8 @@ header .shop {
 }
 
 .swiper .third.swiper-slide-active img {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 
 .swiper .third.swiper-slide-prev .container {
@@ -612,8 +711,8 @@ header .shop {
 }
 
 .swiper .third.swiper-slide-prev img {
-  -webkit-transform: translateY(100vh);
-          transform: translateY(100vh);
+  -webkit-transform: translateY(100vh) scale(1.2);
+          transform: translateY(100vh) scale(1.2);
 }
 
 .swiper .third .kostil {
@@ -740,12 +839,13 @@ header .shop {
   content: '';
   border: 1px solid white;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  background: white;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   top: 50%;
-  -webkit-transform: translate(-150%, -50%);
-          transform: translate(-150%, -50%);
+  -webkit-transform: translate(-250%, -50%);
+          transform: translate(-250%, -50%);
 }
 
 .tovar-podrobnee .plus ul li p {
@@ -763,10 +863,15 @@ header .shop {
   line-height: 27px;
   letter-spacing: 0.05em;
   font-family: "giloryl";
+  margin-bottom: 2em;
 }
 
 .tovar-podrobnee .plus .rlist p span {
-  font-family: "GilroyR";
+  font-family: "GilroyM";
+}
+
+.tovar-podrobnee .plus .rlist p:nth-child(n+2) {
+  margin-bottom: 0;
 }
 
 .sostav {
@@ -954,6 +1059,7 @@ header .shop {
   -webkit-transition: all .6s ease;
   transition: all .6s ease;
   background: #F7F7F7;
+  position: relative;
 }
 
 .forma::-webkit-scrollbar {
@@ -972,6 +1078,44 @@ header .shop {
           transform: translateY(0);
   visibility: visible;
   opacity: 1;
+}
+
+.forma .closeform {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 30px;
+  height: 30px;
+}
+
+.forma .closeform:hover {
+  cursor: pointer;
+}
+
+.forma .closeform::after {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #150F10;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.forma .closeform::before {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #150F10;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .forma h1 {
@@ -1129,6 +1273,30 @@ header .shop {
 }
 
 @media (max-width: 1024px) {
+  .fix__btn {
+    position: fixed;
+    z-index: 10;
+  }
+  .fix__btn .logo__img {
+    height: 52px;
+    opacity: .8;
+  }
+  .fix__btn .container {
+    padding: 0;
+    position: relative;
+  }
+  .fix__btn svg {
+    height: 52px;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .fix__btn svg:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
   .mobile {
     display: block;
   }
@@ -1287,7 +1455,7 @@ header .shop {
     margin-bottom: 6px;
   }
   .swiper .swiper-wrapper .swiper-slide.top .top__text .moretop {
-    margin-top: 50vh;
+    margin-top: 55vh;
     font-weight: 400;
     font-size: 15px;
     line-height: 102%;
@@ -1352,6 +1520,7 @@ header .shop {
     line-height: 86%;
     text-align: center;
     letter-spacing: 0.05em;
+    width: 251px;
   }
   .swiper .swiper-wrapper .swiper-slide .slider .swiper-slide.info .tovar .tovar__card {
     -webkit-box-orient: vertical;
