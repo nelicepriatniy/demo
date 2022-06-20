@@ -77,14 +77,14 @@ document.body.onload = function (){
 //     last.style.height = '.5px';
 // })
 
-let btn = document.querySelectorAll('.btn');
+// let btn = document.querySelectorAll('.btn');
 
-btn.forEach(element => {
-    element.addEventListener('click', function(){
-        document.querySelector('.lsat').classList.toggle('active');
-        document.querySelector('.qweqwe').classList.toggle('active');
-    })
-});
+// btn.forEach(element => {
+//     element.addEventListener('click', function(){
+//         document.querySelector('.lsat').classList.toggle('active');
+//         document.querySelector('.qweqwe').classList.toggle('active');
+//     })
+// });
 
 //дополнительная информаця/состав
 
@@ -104,13 +104,19 @@ document.querySelector('.sostavbtn').addEventListener('click', function(){
     document.querySelector('.popap__close').classList.add('active')
 })
 
+//слайдер в десктопе
+
 if(window.innerWidth > 1024) {
     let slides = document.querySelectorAll('.slide__sostav');
     document.addEventListener('wheel', function(){
         for (i = 0; i < slides.length; ++i) {
             if(slides[i].classList.contains('swiper-slide-active')){
-                slides[i+7].classList.add('sostavPrev');
-            } else if(!slides[i].classList.contains('swiper-slide-active')){
+                if(slides[i+8] != undefined) {
+                    slides[i+7].classList.add('sostavPrev');
+                } else if (slides[i+8] = undefined) {
+                    slides[i+7].classList.remove('sostavPrev');
+                }
+            } else if(slides[i+7] != undefined){
                 slides[i+7].classList.remove('sostavPrev');
             }
         }
@@ -118,8 +124,12 @@ if(window.innerWidth > 1024) {
     document.addEventListener('mousemove', function(){
         for (i = 0; i < slides.length; ++i) {
             if(slides[i].classList.contains('swiper-slide-active')){
-                slides[i+7].classList.add('sostavPrev');
-            } else if(!slides[i].classList.contains('swiper-slide-active')){
+                if(slides[i+8] != undefined) {
+                    slides[i+7].classList.add('sostavPrev');
+                } else if (slides[i+8] = undefined) {
+                    slides[i+7].classList.remove('sostavPrev');
+                }
+            } else if(slides[i+7] != undefined){
                 slides[i+7].classList.remove('sostavPrev');
             }
         }
