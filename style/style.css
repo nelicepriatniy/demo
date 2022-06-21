@@ -455,7 +455,7 @@ header .shop {
 }
 
 .swiper .swiper-wrapper .swiper-slide .slider .swiper-slide.info .tovar p {
-  color: #ECC539;
+  color: #FFE279;
   font-family: "Charpen";
   font-size: 40px;
 }
@@ -499,7 +499,10 @@ header .shop {
   line-height: 108%;
   color: #FFFFFF;
   font-family: "GilroyR";
-  border: 3px solid #ECC539;
+  border: 3px solid #FFE279;
+  -o-border-image: linear-gradient(156deg, #ffe071 33%, #f8efcf 48%, #ffe071 63%);
+     border-image: linear-gradient(156deg, #ffe071 33%, #f8efcf 48%, #ffe071 63%);
+  border-image-slice: 1;
   border-radius: 5px;
   background: none;
   position: relative;

@@ -331,7 +331,7 @@ header {
                                 }
                             }
                             & p {
-                                color: #ECC539;
+                                color: #FFE279;
                                 font-family: $CharpenL;
                                 font-size: 40px;
                             }
@@ -367,7 +367,9 @@ header {
                                         line-height: 108%;
                                         color: #FFFFFF;
                                         font-family: $giloryR;
-                                        border: 3px solid #ECC539;
+                                        border: 3px solid #FFE279;
+                                        border-image: linear-gradient(156deg, rgba(255,224,113,1) 33%, rgba(248,239,207,1) 48%, rgba(255,224,113,1) 63%);
+                                        border-image-slice: 1;
                                         border-radius: 5px;
                                         background: none;
                                         position: relative;
