@@ -335,9 +335,9 @@ header .shop {
   font-size: 32px;
   line-height: 102%;
   letter-spacing: 0.05em;
-  color: #E4BF3B;
+  color: black;
   padding: 11px 28px;
-  font-family: "giloryl";
+  font-family: "GilroyR";
   background: none;
 }
 
@@ -1441,14 +1441,16 @@ header .shop {
     left: 0;
   }
   .swiper .swiper-wrapper .swiper-slide.top {
+    background: -webkit-gradient(linear, right top, left top, from(#E4E7E9), color-stop(35.66%, #D5D8DA), color-stop(38.7%, #CDD0D3), color-stop(41.23%, #D4D6D9), color-stop(68.59%, #E2E4E7), to(#E1E3E6));
+    background: linear-gradient(270deg, #E4E7E9 0%, #D5D8DA 35.66%, #CDD0D3 38.7%, #D4D6D9 41.23%, #E2E4E7 68.59%, #E1E3E6 100%);
     height: 100vh;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
   }
   .swiper .swiper-wrapper .swiper-slide.top .topBgDesktop {
-    -webkit-transform: translate(-50%, 110%) scale(1);
-            transform: translate(-50%, 110%) scale(1);
+    -webkit-transform: translate(-40%, 110%) scale(1);
+            transform: translate(-40%, 110%) scale(1);
     height: 100%;
   }
   .swiper .swiper-wrapper .swiper-slide.top .top__text {
