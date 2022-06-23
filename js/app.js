@@ -165,13 +165,12 @@ formBtn.forEach(element => {
     })
 });
 
-let closeForm = document.querySelectorAll('.closeForm');
+let closeForm = document.querySelector('.closeform');
 
-closeForm.forEach(element => {
-    element.addEventListener('click', function(){
+closeForm.addEventListener('click', function(){
         document.querySelector('.forma').classList.remove('active');
+        document.querySelector('.popap__close').classList.remove('active')
     })
-});
 
 //мобильный хедер 
 

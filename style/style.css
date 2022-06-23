@@ -1797,6 +1797,12 @@ header .shop {
   }
   .forma {
     overflow: hidden;
+    width: 100%;
+  }
+  .forma .closeform {
+    right: 20px;
+    top: 20px;
+    z-index: 51;
   }
   .forma .container h1 {
     font-size: 20px;
