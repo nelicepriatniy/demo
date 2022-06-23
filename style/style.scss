@@ -238,15 +238,15 @@ header {
                         }
                     }
                     & .moretop {
-                        background: #150F10;
-                        border: 3px solid #EFE199;
-                        border-radius: 2px;
-                        color: #F7E297;
-                        padding: 11px 28px;
+                        border: 3px solid #FFFFFF;
+                        border-radius: 27px;
                         font-size: 32px;
                         line-height: 102%;
                         letter-spacing: 0.05em;
+                        color: #E4BF3B;
+                        padding: 11px 28px;
                         font-family: $giloryL;
+                        background: none;
                     }
                 }
                 & .topBg {
@@ -382,7 +382,7 @@ header {
                                         & button {
                                             border-radius: 0;
                                             font-family: $giloryR;
-                                            font-size: 32px;
+                                            font-size: 28px;
                                             line-height: 108%;
                                             background: none;
                                             border: none;
@@ -516,7 +516,7 @@ header {
             }
         }
             
-        & img {
+        & .thitd__bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -530,7 +530,7 @@ header {
             & .container {
                 transform: translateY(0);
             }
-                & img {
+                & .thitd__bg {
                     transform: translateY(0) scale(1);
                 }
         }
@@ -538,9 +538,13 @@ header {
             & .container {
                 transform: translateY(150vh);
             }
-                & img {
+                & .thitd__bg {
                     transform: translateY(100vh) scale(1.2);
                 }
+                & footer {
+                    & .container {
+                        transform: translateY(0) scale(1);
+                    }}
         }
         
         & .kostil {
@@ -554,6 +558,68 @@ header {
             font-size: 22px;
             line-height: 39px;
             color: white;
+        }
+        & footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            width: 100%;
+            background: #F7F7F7;
+            border-top: 4px solid rgba(142, 141, 139, 0.6);
+            & .container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                transform: translateY(0) scale(1);
+            }
+            & .foot__logo {
+                width: 72.25px;
+                height: 102.85px;
+            }
+            & ul {
+                display: flex;
+                list-style: none;
+                & li {
+                    margin-right: 22px;
+                    &:last-child{
+                        margin-right: 0;
+                    }
+                    & a {
+                        font-family: $giloryS;
+                        font-size: 24px;
+                        line-height: 157%;
+                        letter-spacing: -0.03em;
+                        color: #8E8D8B;
+                    }
+                }
+            }
+            & .contacts {
+                width: 223px;
+                & p {
+                    margin: 0;
+                    font-family: $giloryR;
+                    width: auto;
+                    font-size: 24px;
+                    line-height: 104.5%;
+                    /* identical to box height, or 25px */
+                    
+                    text-align: center;
+                    letter-spacing: 0.05em;
+                    
+                    color: #8E8D8B;
+                    &:last-child {
+                        margin-top: 4px;
+                        font-size: 16px;
+                        line-height: 104.5%;
+                        /* identical to box height, or 17px */
+                        width: auto;
+                        text-align: center;
+                        letter-spacing: 0.05em;
+                        
+                        color: #8E8D8B;
+                    }
+                }
+            }
         }
     }
     
@@ -636,15 +702,12 @@ header {
                 margin-bottom: 1em;
                 position: relative;
                 &::before {
-                    content: '';
-                    border: 1px solid white;
+                    content: url(../meida/aboutwing.svg);
                     position: absolute;
-                    background: white;
-                    width: 5px;
-                    height: 5px;
-                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
                     top: 50%;
-                    transform: translate(-250%, -50%);
+                    transform: translate(-100%, -50%);
                 }
                 & p {
                     font-family: $giloryL;
@@ -803,31 +866,25 @@ header {
     }
 }
 .forma {
-    // position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    // visibility: hidden;
+    border-radius: 15px;
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
     opacity: 1;
     z-index: 20;
-    overflow-y: scroll;
-    // transform: translateY(100vh);
+    transform: translate(100vh, 50%);
     color: black;
     transition: all .6s ease;
     background: #F7F7F7;
-    position: relative;
-    &::-webkit-scrollbar {
-        width: 7px;
-        background-color: #f9f9fd00;
-        border-radius: 20px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: #E7CC62;
-        border-radius: 20px;
+    overflow: hidden;
+    & .container {
+        width: 100%;
     }
     &.active {
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
     visibility: visible;
     opacity: 1;
     }
@@ -864,9 +921,9 @@ header {
     & h1 {
         width: 100%;
         text-align: center;
-        font-size: 36px;
-        line-height: 44px;
-        letter-spacing: 0.245em;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.115em;
         font-family: $giloryS;
         margin-bottom: 17px;
     }
@@ -878,17 +935,17 @@ header {
     & form {
         margin-bottom: 30px;
         display: flex;
-        width: 657px;
+        width: 524px;
         flex-direction: column;
         align-items: flex-end;
         position: relative;
         z-index: 3;
         & label {
-            font-size: 27px;
-            line-height: 32px;
+            font-size: 20px;
+            line-height: 24px;
             letter-spacing: 0.245em;
             font-family: $giloryR;
-            margin: 14px 0 0 0;
+            margin: 7px 0 0 0;
             width: 100%;
             &:first-child {
                 margin-top: 0;
@@ -897,9 +954,10 @@ header {
         & input, textarea {
             border-radius: 2px;
             background: none;
-            font-size: 27px;
-            line-height: 33px;
-            padding: 11px 22px 9px 22px;
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: 0.245em;
+            padding: 11px 23px;
             letter-spacing: 0.245em;
             width: 100%;
             border: 2px solid #8E8D8B;
@@ -910,12 +968,14 @@ header {
             margin-bottom: 7px;
         }
         & button {
-            border: 3px solid #000000;
-            border-radius: 5px;
+            border: 2px solid #000000;
+            border-radius: 23px;
             background: none;
-            padding: 15px 12px;
+            padding: 7px 12px;
             font-size: 29px;
             line-height: 108%;
+            text-align: center;
+            letter-spacing: 0.01em;
             color: black;
         }
 
@@ -923,58 +983,11 @@ header {
     & .formBg {
         position: absolute;
         z-index: 2;
-        right: 105px;
+        right: -50px;
         width: 502px;
     }
-    & footer {
-        position: relative;
-        z-index: 4;
-        & .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-        }
-        & img {
-            height: 102.85px;
-        }
-        & ul {
-            list-style: none;
-            display: flex;
-            li {
-                color: #8E8D8B;
-                margin: 0 10px;
-                font-size: 24px;
-                line-height: 157%;
-                letter-spacing: -0.03em;
-                font-family: $giloryS;
-                &:hover {
-                    cursor: pointer;
-                }
-                & a {color: #8E8D8B;
-                    margin: 0 10px;
-                    font-size: 24px;
-                    line-height: 157%;
-                    letter-spacing: -0.03em;
-                    font-family: $giloryS;
-                    text-decoration: none;
-                }
-            }
-        }
-        & .contacts {
-            & p {
-                font-size: 24px;
-                line-height: 104.5%;
-                text-align: center;
-                letter-spacing: 0.05em;
-                color: #8E8D8B;
-                &:last-child{
-                    font-size: 16px;
-                }
-            }
-        }
-    }
 }
+
 
 
 @media (max-width: 1024px) {
@@ -990,7 +1003,7 @@ header {
             padding: 0;
             position: relative;
         }
-        & svg {
+        & .svg {
             height: 52px;
             left: 0;
             position: absolute;
@@ -1121,6 +1134,10 @@ header {
         & .swiper-wrapper {
             & .swiper-slide{
                 &.top {
+                    & .topBgDesktop {
+                        transform: translate(-50%, 110%) scale(1);
+                        height: 100%;
+                    }
                     height: 100vh;
                     align-items: flex-start;
                     & .top__text {
@@ -1165,10 +1182,35 @@ header {
                         }
                     }
                 }
+                &.swiper-slide-active {
+                    & .topBgDesktop {
+                        transform: translate(-50%, 10%) scale(1);
+                        height: 100%;
+                    }
+                    & .slider {
+                        & .second__bg {
+                            width: auto;
+                            height: 100vh;
+                            transform: translate(-50%, 0) scale(1);
+    
+                        }
+                    }
+                }
+                &.swiper-slide-prev {
+                    & .slider {
+                        & .second__bg {
+                            width: auto;
+                            height: 100vh;
+                            transform: translate(-50%, -100vh) scale(1);
+    
+                        }
+                    }
+                }
                 & .slider {
                     & .second__bg {
                         width: auto;
                         height: 100vh;
+                        transform: translate(-50%, 100vh) scale(1);
                     }
                     & .swiper-slide {
                         & .container {
@@ -1190,7 +1232,6 @@ header {
                             & .tovar {
                                 padding: 9px 15px;
                                 overflow: hidden;
-                                width: 280px;
                                 & p {
                                     font-size: 17px;
                                     line-height: 86%;
@@ -1208,6 +1249,7 @@ header {
                                             position: absolute;
                                             width: 140%;
                                             height: 2px;
+                                            display: none;
                                             top: 80px;
                                             background-color: #ECC539;
                                             left: -20%;
@@ -1324,6 +1366,7 @@ header {
                     }
                 }
             }
+            
         }
     }
     .tovar-podrobnee {
@@ -1404,7 +1447,7 @@ header {
                 text-align: center;
                 padding: 2px 4px;
                 font-size: 10px;
-                line-height: 24px;
+                line-height: 1em;
                 letter-spacing: 0.05em;
             }
         }

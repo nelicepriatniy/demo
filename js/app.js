@@ -96,7 +96,9 @@ document.querySelector('.more').addEventListener('click', function(){
 document.querySelector('.popap__close').addEventListener('click', function(){
     document.querySelector('.tovar-podrobnee').classList.remove('active');
     document.querySelector('.popap__close').classList.remove('active')
-    document.querySelector('.sostav').classList.remove('active')
+    document.querySelector('.sostav').classList.remove('active');
+    document.querySelector('.forma').classList.remove('active');
+
 })
 
 document.querySelector('.sostavbtn').addEventListener('click', function(){
@@ -159,6 +161,7 @@ let formBtn = document.querySelectorAll('.formBtn');
 formBtn.forEach(element => {
     element.addEventListener('click', function(){
         document.querySelector('.forma').classList.add('active');
+        document.querySelector('.popap__close').classList.add('active')
     })
 });
 
