@@ -1505,8 +1505,8 @@ header .shop {
     right: 10vw;
   }
   .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .topBgDesktop {
-    -webkit-transform: translate(-50%, 0%) scale(1);
-            transform: translate(-50%, 0%) scale(1);
+    -webkit-transform: translate(-50%, 10%) scale(1);
+            transform: translate(-50%, 10%) scale(1);
     height: 100%;
   }
   .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .slider .second__bg {
